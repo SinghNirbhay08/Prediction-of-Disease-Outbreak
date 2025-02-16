@@ -92,9 +92,29 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load models
-diabetes_model = pickle.load(open(r"..\\models\\diabetes_model.sav", "rb"))
-Heart_model = pickle.load(open(r"..\\models\\Heart_model.sav", "rb"))
-pakinsons_model = pickle.load(open(r"..\\models\\pakinsons_model.sav", "rb"))
+# Define correct file paths
+diabetes_model_path = os.path.join("models", "diabetes_model.sav")
+heart_model_path = os.path.join("models", "Heart_model.sav")
+parkinsons_model_path = os.path.join("models", "pakinsons_model.sav")
+
+# Check if files exist before loading
+if os.path.exists(diabetes_model_path):
+    with open(diabetes_model_path, "rb") as f:
+        diabetes_model = pickle.load(f)
+else:
+    st.error(f"Diabetes model file not found: {diabetes_model_path}")
+
+if os.path.exists(heart_model_path):
+    with open(heart_model_path, "rb") as f:
+        heart_model = pickle.load(f)
+else:
+    st.error(f"Heart model file not found: {heart_model_path}")
+
+if os.path.exists(parkinsons_model_path):
+    with open(parkinsons_model_path, "rb") as f:
+        parkinsons_model = pickle.load(f)
+else:
+    st.error(f"Parkinsons model file not found: {parkinsons_model_path}")
 
 # Sidebar menu
 with st.sidebar:
