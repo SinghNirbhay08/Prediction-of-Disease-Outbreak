@@ -92,9 +92,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load models
-diabetes_model = pickle.load(open(r"C:\Users\skspa\Desktop\AI internship\Saved_models\diabetes_model.sav", "rb"))
-Heart_model = pickle.load(open(r"C:\Users\skspa\Desktop\AI internship\Saved_models\Heart_model.sav", "rb"))
-pakinsons_model = pickle.load(open(r"C:\Users\skspa\Desktop\AI internship\Saved_models\pakinsons_model.sav", "rb"))
+diabetes_model = pickle.load(open(r"..\models\diabetes_model.sav", "rb"))
+Heart_model = pickle.load(open(r"..\models\Heart_model.sav", "rb"))
+pakinsons_model = pickle.load(open(r"..\models\pakinsons_model.sav", "rb"))
 
 # Sidebar menu
 with st.sidebar:
